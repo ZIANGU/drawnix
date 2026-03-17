@@ -78,10 +78,11 @@ const arTranslations: Translations = {
     // Menu items
     "menu.open": "فتح",
     "menu.saveFile": "حفظ الملف",
-    "menu.exportImage": "تصدير صورة",
-    "menu.exportImage.svg": "SVG",
-    "menu.exportImage.png": "PNG",
-    "menu.exportImage.jpg": "JPG",
+    "menu.exportFile": "تصدير الملف",
+    "menu.exportFile.svg": "SVG",
+    "menu.exportFile.png": "PNG",
+    "menu.exportFile.jpg": "JPG",
+    "menu.exportFile.pdf": "PDF",
     "menu.cleanBoard": "مسح اللوحة",
     "menu.github": "غيت هب",
 

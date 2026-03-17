@@ -27,6 +27,7 @@
     "browser-fs-access": "^0.35.0",
     "classnames": "^2.5.1",
     "is-hotkey": "^0.2.0",
+    "jspdf": "^4.2.0",
     "laser-pen": "^1.0.1",
     "localforage": "^1.10.0",
     "lodash": "^4.17.21",

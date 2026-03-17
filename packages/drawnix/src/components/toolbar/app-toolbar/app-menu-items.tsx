@@ -17,7 +17,7 @@ import {
 import { loadFromJSON, saveAsJSON } from '../../../data/json';
 import MenuItem from '../../menu/menu-item';
 import MenuItemLink from '../../menu/menu-item-link';
-import { saveAsImage, saveAsSvg } from '../../../utils/image';
+import { saveAsImage, saveAsPdf, saveAsSvg } from '../../../utils/image';
 import { useDrawnix } from '../../../hooks/use-drawnix';
 import { useI18n } from '../../../i18n';
 import Menu from '../../menu/menu';
@@ -79,14 +79,14 @@ export const OpenFile = () => {
 };
 OpenFile.displayName = 'OpenFile';
 
-export const SaveAsImage = () => {
+export const SaveAsFile = () => {
   const board = useBoard();
   const menuContentProps = useContext(MenuContentPropsContext);
   const { t } = useI18n();
   return (
     <MenuItem
       icon={ExportImageIcon}
-      data-testid="image-export-button"
+      data-testid="file-export-button"
       onSelect={() => {
         saveAsImage(board, true);
       }}
@@ -102,36 +102,44 @@ export const SaveAsImage = () => {
             onSelect={() => {
               saveAsSvg(board);
             }}
-            aria-label={t('menu.exportImage.svg')}
+            aria-label={t('menu.exportFile.svg')}
           >
-            {t('menu.exportImage.svg')}
+            {t('menu.exportFile.svg')}
           </MenuItem>
           <MenuItem
             onSelect={() => {
               saveAsImage(board, true);
             }}
-            aria-label={t('menu.exportImage.png')}
+            aria-label={t('menu.exportFile.png')}
           >
-            {t('menu.exportImage.png')}
+            {t('menu.exportFile.png')}
           </MenuItem>
           <MenuItem
             onSelect={() => {
               saveAsImage(board, false);
             }}
-            aria-label={t('menu.exportImage.jpg')}
+            aria-label={t('menu.exportFile.jpg')}
           >
-            {t('menu.exportImage.jpg')}
+            {t('menu.exportFile.jpg')}
+          </MenuItem>
+          <MenuItem
+            onSelect={() => {
+              saveAsPdf(board);
+            }}
+            aria-label={t('menu.exportFile.pdf')}
+          >
+            {t('menu.exportFile.pdf')}
           </MenuItem>
         </Menu>
       }
       shortcut={getShortcutKey('CtrlOrCmd+Shift+E')}
-      aria-label={t('menu.exportImage')}
+      aria-label={t('menu.exportFile')}
     >
-      {t('menu.exportImage')}
+      {t('menu.exportFile')}
     </MenuItem>
   );
 };
-SaveAsImage.displayName = 'SaveAsImage';
+SaveAsFile.displayName = 'SaveAsFile';
 
 export const CleanBoard = () => {
   const { appState, setAppState } = useDrawnix();
@@ -159,7 +167,7 @@ export const Socials = () => {
   return (
     <MenuItemLink
       icon={GithubIcon}
-      href="https://github.com/plait-board/drawnix"
+      href="https://github.com/ZIANGU/drawnix"
       aria-label="GitHub"
     >
       GitHub

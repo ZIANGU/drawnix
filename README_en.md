@@ -1,8 +1,8 @@
 <p align="center">
   <picture style="width: 320px">
-    <source media="(prefers-color-scheme: light)" srcset="https://github.com/plait-board/drawnix/blob/develop/apps/web/public/logo/logo_drawnix_h.svg?raw=true" />
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/plait-board/drawnix/blob/develop/apps/web/public/logo/logo_drawnix_h_dark.svg?raw=true" />
-    <img src="https://github.com/plait-board/drawnix/blob/develop/apps/web/public/logo/logo_drawnix_h.svg?raw=true" width="360" alt="Drawnix logo and name" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/ZIANGU/drawnix/blob/develop/apps/web/public/logo/logo_drawnix_h.svg?raw=true" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/ZIANGU/drawnix/blob/develop/apps/web/public/logo/logo_drawnix_h_dark.svg?raw=true" />
+    <img src="https://github.com/ZIANGU/drawnix/blob/develop/apps/web/public/logo/logo_drawnix_h.svg?raw=true" width="360" alt="Drawnix logo and name" />
   </picture>
 </p>
 <div align="center">
@@ -15,7 +15,7 @@
 <div align="center">
   <figure>
     <a target="_blank" rel="noopener">
-      <img src="https://github.com/plait-board/drawnix/blob/develop/apps/web/public/product_showcase/case-2.png" alt="Product showcase" width="80%" />
+      <img src="https://github.com/ZIANGU/drawnix/blob/develop/apps/web/public/product_showcase/case-2.png" alt="Product showcase" width="80%" />
     </a>
     <figcaption>
       <p align="center">
@@ -36,7 +36,7 @@
   <a href="https://trendshift.io/repositories/13979" target="_blank"><img src="https://trendshift.io/api/badge/repositories/13979" alt="plait-board%2Fdrawnix | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 </div>
 
-[*中文*](https://github.com/plait-board/drawnix/blob/develop/README.md)
+[*中文*](https://github.com/ZIANGU/drawnix/blob/develop/README.md)
 
 ## Features
 
@@ -139,4 +139,4 @@ Special thanks to the company for its strong support for open source projects, a
 
 ## License
 
-[MIT License](https://github.com/plait-board/drawnix/blob/master/LICENSE)
+[MIT License](https://github.com/ZIANGU/drawnix/blob/master/LICENSE)
