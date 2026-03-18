@@ -78,11 +78,10 @@ const ruTranslations: Translations = {
   // Menu items
   'menu.open': 'Открыть',
   'menu.saveFile': 'Сохранить',
-  'menu.exportFile': 'Экспорт файла',
-  'menu.exportFile.svg': 'SVG',
-  'menu.exportFile.png': 'PNG',
-  'menu.exportFile.jpg': 'JPG',
-  'menu.exportFile.pdf': 'PDF',
+  'menu.exportImage': 'Экспортировать',
+  'menu.exportImage.svg': 'SVG',
+  'menu.exportImage.png': 'PNG',
+  'menu.exportImage.jpg': 'JPG',
   'menu.cleanBoard': 'Очистить доску',
   'menu.github': 'GitHub',
   

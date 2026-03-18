@@ -78,11 +78,10 @@ const viTranslations: Translations = {
     // Menu items
     'menu.open': 'Mở',
     'menu.saveFile': 'Lưu tệp',
-    'menu.exportFile': 'Xuất tệp',
-    'menu.exportFile.svg': 'SVG',
-    'menu.exportFile.png': 'PNG',
-    'menu.exportFile.jpg': 'JPG',
-    'menu.exportFile.pdf': 'PDF',
+    'menu.exportImage': 'Xuất hình ảnh',
+    'menu.exportImage.svg': 'SVG',
+    'menu.exportImage.png': 'PNG',
+    'menu.exportImage.jpg': 'JPG',
     'menu.cleanBoard': 'Xóa bảng',
     'menu.github': 'GitHub',
 

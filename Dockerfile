@@ -4,7 +4,7 @@ WORKDIR /builder
 
 COPY . /builder
 
-RUN npm install \
+RUN npm ci --ignore-scripts \
     && npm run build 
 
 

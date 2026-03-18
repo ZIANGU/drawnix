@@ -17,7 +17,7 @@ import {
 import { loadFromJSON, saveAsJSON } from '../../../data/json';
 import MenuItem from '../../menu/menu-item';
 import MenuItemLink from '../../menu/menu-item-link';
-import { saveAsImage, saveAsPdf, saveAsSvg } from '../../../utils/image';
+import { saveAsImage, saveAsSvg } from '../../../utils/image';
 import { useDrawnix } from '../../../hooks/use-drawnix';
 import { useI18n } from '../../../i18n';
 import Menu from '../../menu/menu';
