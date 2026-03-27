@@ -77,10 +77,12 @@ const enTranslations: Translations = {
   // Menu items
   'menu.open': 'Open',
   'menu.saveFile': 'Save File',
-  'menu.exportImage': 'Export Image',
-  'menu.exportImage.svg': 'SVG',
-  'menu.exportImage.png': 'PNG',
-  'menu.exportImage.jpg': 'JPG',
+  'menu.exportFile': 'Export File',
+  'menu.exportFile.svg': 'SVG',
+  'menu.exportFile.png': 'PNG',
+  'menu.exportFile.jpg': 'JPG',
+  'menu.exportFile.pdf': 'PDF',
+  'menu.exportFile.md': 'Markdown',
   'menu.cleanBoard': 'Clear Board',
   'menu.github': 'GitHub',
 

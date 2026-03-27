@@ -82,10 +82,12 @@ export interface Translations {
   // Menu items
   'menu.open': string;
   'menu.saveFile': string;
-  'menu.exportImage': string;
-  'menu.exportImage.svg': string;
-  'menu.exportImage.png': string;
-  'menu.exportImage.jpg': string;
+  'menu.exportFile': string;
+  'menu.exportFile.svg': string;
+  'menu.exportFile.png': string;
+  'menu.exportFile.jpg': string;
+  'menu.exportFile.pdf': string;
+  'menu.exportFile.md': string;
   'menu.cleanBoard': string;
   'menu.github': string;
 
