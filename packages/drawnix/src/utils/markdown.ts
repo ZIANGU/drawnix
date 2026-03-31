@@ -177,9 +177,6 @@ export const convertToMarkdown = (board: PlaitBoard): string => {
     } else if (element.type === 'draw' || PlaitDrawElement.isDrawElement(element)) {
       markdown += '### Drawing Content:\n';
       markdown += convertDrawElementToMarkdown(element as PlaitDrawElement);
-    } else if (element.type === 'freehand' || Freehand.isFreehand(element)) {
-      markdown += '### Freehand Drawing:\n';
-      markdown += convertFreehandElementToMarkdown(element);
     } else if (element.type === 'geometry') {
       // 处理几何元素
       markdown += '### Geometry Content:\n';
@@ -196,7 +193,7 @@ export const convertToMarkdown = (board: PlaitBoard): string => {
       } else {
         markdown += `\n\n*(Geometry element - not convertible to text)*\n\n`;
       }
-    } else {
+    } else if (element.type !== 'freehand' && !Freehand.isFreehand(element)) {
       markdown += `### Unknown Element Type (${element.type}):\n`;
       markdown += `\`\`\`json\n${JSON.stringify(element, null, 2)}\n\`\`\`\n\n`;
     }
