@@ -60,6 +60,8 @@ export const saveAsPdf = (board: PlaitBoard) => {
     fillStyle: backgroundColor,
     // 调整图像质量，平衡清晰度和性能
     ratio: 4,
+    // 增加 padding 以确保底部文字不被裁剪
+    padding: 40,
   }).then((image) => {
     if (image) {
       // 优化：使用无损压缩的 PNG 格式以确保最高清晰度

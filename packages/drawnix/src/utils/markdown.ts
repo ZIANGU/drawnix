@@ -157,7 +157,7 @@ export const convertToMarkdown = (board: PlaitBoard): string => {
     console.log(`Processing element ${i + 1}, type: ${element.type}`);
     
     if (element.type === 'mind' || MindElement.isMindElement(board, element)) {
-      markdown += '### Mind Map Content:\n';
+      // markdown += '### Mind Map Content:\n';
       const mindContent = convertMindElementToMarkdown(element as MindElement);
       // 处理根元素，将第一个列表项转换为标题
       const lines = mindContent.split('\n');
