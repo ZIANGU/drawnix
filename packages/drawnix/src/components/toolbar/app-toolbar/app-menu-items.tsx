@@ -178,10 +178,10 @@ export const Socials = () => {
   return (
     <MenuItemLink
       icon={GithubIcon}
-      href="https://github.com/ZIANGU/drawnix"
-      aria-label="GitHub"
+      href="https://gitee.com/ziangu/drawnix"
+      aria-label="Gitee"
     >
-      GitHub
+      Gitee
     </MenuItemLink>
   );
 };
