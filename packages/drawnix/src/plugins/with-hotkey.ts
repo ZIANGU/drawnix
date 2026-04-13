@@ -22,6 +22,21 @@ export const buildDrawnixHotkeyPlugin = (
       const isTypingNormal =
         event.target instanceof HTMLInputElement ||
         event.target instanceof HTMLTextAreaElement;
+      
+      // 清除画布快捷键 - 总是响应
+      if (!isTypingNormal) {
+        if (
+          isHotkey(['mod+backspace'])(event) ||
+          isHotkey(['mod+delete'])(event)
+        ) {
+          updateAppState({
+            openCleanConfirm: true,
+          });
+          event.preventDefault();
+          return;
+        }
+      }
+      
       if (
         !isTypingNormal &&
         (PlaitBoard.getMovingPointInBoard(board) ||
@@ -35,16 +50,6 @@ export const buildDrawnixHotkeyPlugin = (
         }
         if (isHotkey(['mod+s'], { byKey: true })(event)) {
           saveAsJSON(board);
-          event.preventDefault();
-          return;
-        }
-        if (
-          isHotkey(['mod+backspace'])(event) ||
-          isHotkey(['mod+delete'])(event)
-        ) {
-          updateAppState({
-            openCleanConfirm: true,
-          });
           event.preventDefault();
           return;
         }

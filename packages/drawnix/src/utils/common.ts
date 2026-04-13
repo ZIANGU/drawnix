@@ -34,7 +34,8 @@ export const composeEventHandlers = <E>(
 
 export const base64ToBlob = (base64: string) => {
   const arr = base64.split(',');
-  const fileType = arr[0].match(/:(.*?);/)![1];
+  const match = arr[0].match(/:(.*?);/);
+  const fileType = match ? match[1] : '';
   const bstr = atob(arr[1]);
   let l = bstr.length;
   const u8Arr = new Uint8Array(l);

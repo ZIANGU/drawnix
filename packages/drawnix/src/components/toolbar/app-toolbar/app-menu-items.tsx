@@ -70,7 +70,9 @@ export const OpenFile = () => {
       data-testid="open-button"
       onSelect={() => {
         loadFromJSON(board).then((data) => {
-          clearAndLoad(data.elements, data.viewport, data.theme);
+          if (data) {
+            clearAndLoad(data.elements, data.viewport, data.theme);
+          }
         });
       }}
       icon={OpenFileIcon}

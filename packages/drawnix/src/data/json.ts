@@ -13,27 +13,47 @@ export const saveAsJSON = async (
   board: PlaitBoard,
   name: string = getDefaultName()
 ) => {
-  const serialized = serializeAsJSON(board);
-  const blob = new Blob([serialized], {
-    type: MIME_TYPES.drawnix,
-  });
+  try {
+    const serialized = serializeAsJSON(board);
+    const blob = new Blob([serialized], {
+      type: MIME_TYPES.drawnix,
+    });
 
-  const fileHandle = await fileSave(blob, {
-    name,
-    extension: 'drawnix',
-    description: 'Drawnix file',
-  });
-  return { fileHandle };
+    const fileHandle = await fileSave(blob, {
+      name,
+      extension: 'drawnix',
+      description: 'Drawnix file',
+    });
+    return { fileHandle };
+  } catch (error) {
+    // 捕获用户取消保存操作的异常
+    if (error instanceof Error && error.name === 'AbortError') {
+      console.log('User cancelled JSON export');
+    } else {
+      console.error('Error saving JSON:', error);
+    }
+    return { fileHandle: null };
+  }
 };
 
 export const loadFromJSON = async (board: PlaitBoard) => {
-  const file = await fileOpen({
-    description: 'Drawnix files',
-    // ToDo: Be over-permissive until https://bugs.webkit.org/show_bug.cgi?id=34442
-    // gets resolved. Else, iOS users cannot open `.drawnix` files.
-    // extensions: ["json", "drawnix", "png", "svg"],
-  });
-  return loadFromBlob(board, await normalizeFile(file));
+  try {
+    const file = await fileOpen({
+      description: 'Drawnix files',
+      // ToDo: Be over-permissive until https://bugs.webkit.org/show_bug.cgi?id=34442
+      // gets resolved. Else, iOS users cannot open `.drawnix` files.
+      // extensions: ["json", "drawnix", "png", "svg"],
+    });
+    return loadFromBlob(board, await normalizeFile(file));
+  } catch (error) {
+    // 捕获用户取消打开文件操作的异常
+    if (error instanceof Error && error.name === 'AbortError') {
+      console.log('User cancelled file open');
+    } else {
+      console.error('Error opening file:', error);
+    }
+    return null;
+  }
 };
 
 export const isValidDrawnixData = (data?: any): data is DrawnixExportedData => {
