@@ -9,7 +9,7 @@ import { addImage, saveAsImage } from '../utils/image';
 import { saveAsJSON } from '../data/json';
 import { DrawnixState } from '../hooks/use-drawnix';
 import { BoardCreationMode, setCreationMode } from '@plait/common';
-import { MindPointerType } from '@plait/mind';
+import { MindElement, MindPointerType, MindTransforms } from '@plait/mind';
 import { FreehandShape } from './freehand/type';
 import { ArrowLineShape, BasicShapes } from '@plait/draw';
 
@@ -132,6 +132,26 @@ export const buildDrawnixHotkeyPlugin = (
         board.redo();
         event.preventDefault();
         return;
+      }
+
+      // 思维导图节点操作快捷键
+      const selectedElements = getSelectedElements(board);
+      if (selectedElements.length === 1) {
+        const selectedElement = selectedElements[0];
+        if (MindElement.isMindElement(board, selectedElement)) {
+          // Tab 键：添加子级节点
+          if (event.key === 'Tab') {
+            MindTransforms.insertChildNode(board as any, selectedElement as MindElement);
+            event.preventDefault();
+            return;
+          }
+          // Enter 键：添加同级节点
+          if (event.key === 'Enter') {
+            MindTransforms.insertSiblingNode(board as any, selectedElement as MindElement);
+            event.preventDefault();
+            return;
+          }
+        }
       }
 
       keyDown(event);
